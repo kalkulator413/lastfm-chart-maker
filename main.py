@@ -2,7 +2,7 @@ from scraper import *
 from graphics import *
 import pickle
 
-data = get_data('kalkulator413')
+data = get_data('thedivy')
 
 with open('data', 'wb') as f: 
     pickle.dump(data, f)
