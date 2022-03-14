@@ -43,13 +43,13 @@ def graphics(data):
             text_size = int(SIZE / 12)
             if len(albums[counter]) > 22:
                 text_size = int(22*text_size/len(albums[counter]))
-            font = ImageFont.truetype("arial.ttf", text_size)
-            draw.text((2 + x*SIZE, y*SIZE), albums[counter], font=font, fill=(255, 255, 255), stroke_width=0)
+            font = ImageFont.truetype("fonts/arialbold.ttf", text_size)
+            draw.text((2 + x*SIZE, int((y+.03)*SIZE)), albums[counter], font=font, fill=(255, 255, 255), stroke_width=0)
 
             text_size = int(SIZE / 12)
             if len(artists[counter]) > 18:
                 text_size = int(18*text_size/len(artists[counter]))
-            font = ImageFont.truetype("cour.ttf", text_size)
+            font = ImageFont.truetype("fonts/cour.ttf", text_size)
             draw.text((2 + x*SIZE, y*SIZE + int(.2 * SIZE) - 3), artists[counter], font=font, fill=(255, 255, 255), anchor='lb')
 
 
