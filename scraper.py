@@ -7,9 +7,18 @@ from spotipy.oauth2 import SpotifyClientCredentials
 client_credentials_manager = SpotifyClientCredentials()
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-def get_data(username):
+time_dict = {
+    'weekly':7,
+    'monthly': 30,
+    'quarterly': 90,
+    'bi-anually': 180,
+    'annualy':365,
+    'all-time':1
+}
+
+def get_data(username, days):
     data = []
-    url = 'https://www.last.fm/user/' + username + '/library/albums?date_preset=LAST_7_DAYS'
+    url = 'https://www.last.fm/user/' + username + f'/library/albums?date_preset=LAST_{time_dict[days]}_DAYS'
 
     html = urlopen(Request(url, headers = {'User-Agent': 'Mozilla/5.0'})).read().decode('utf-8')
 
