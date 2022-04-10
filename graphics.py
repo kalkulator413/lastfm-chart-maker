@@ -20,7 +20,7 @@ def graphics(data):
             if imgs[counter]:
                 req = urllib.request.urlopen(imgs[counter])
                 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-                pic = cv2.imdecode(arr, -1) # 'Load it as it is'
+                pic = cv2.imdecode(arr, cv2.IMREAD_COLOR) # 'Load it as it is'
                 pic = cv2.resize(pic, (SIZE,SIZE), interpolation = cv2.INTER_AREA)
 
                 try:

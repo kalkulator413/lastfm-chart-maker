@@ -26,7 +26,7 @@ def get_data(username):
     return data[:25]
     
 def fix_string(s):
-    s = s.replace('&#39;', '\'')
+    s = s.replace('&#39;', '')
     s = s.replace('&quot;', '"')
     s = s.replace('amp;', '')
     s = s.replace(' ', ' ')
